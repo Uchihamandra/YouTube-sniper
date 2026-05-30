@@ -13,326 +13,206 @@
     --border: #222;
     --text: #f0f0f0;
     --muted: #666;
-    --accent: #FF0033;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    background: var(--dark);
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    min-height: 100vh;
-  }
+  body { background: var(--dark); color: var(--text); font-family: 'DM Sans', sans-serif; min-height: 100vh; }
 
   /* HEADER */
   header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 40px;
-    border-bottom: 1px solid var(--border);
-    position: sticky;
-    top: 0;
-    background: rgba(10,10,10,0.95);
-    backdrop-filter: blur(12px);
-    z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 40px; border-bottom: 1px solid var(--border);
+    position: sticky; top: 0; background: rgba(10,10,10,0.95);
+    backdrop-filter: blur(12px); z-index: 100;
   }
-
-  .logo {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2rem;
-    letter-spacing: 3px;
-    color: var(--text);
-  }
+  .logo { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 3px; }
   .logo span { color: var(--red); }
-
-  .api-bar {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
+  .api-bar { display: flex; align-items: center; gap: 10px; }
   .api-bar input {
-    background: var(--card);
-    border: 1px solid var(--border);
-    color: var(--text);
-    padding: 8px 14px;
-    border-radius: 6px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.82rem;
-    width: 260px;
-    transition: border-color .2s;
+    background: var(--card); border: 1px solid var(--border); color: var(--text);
+    padding: 8px 14px; border-radius: 6px; font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem; width: 260px; transition: border-color .2s;
   }
   .api-bar input:focus { outline: none; border-color: var(--red); }
-
   .btn {
-    background: var(--red);
-    color: #fff;
-    border: none;
-    padding: 8px 18px;
-    border-radius: 6px;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 600;
-    font-size: 0.82rem;
-    cursor: pointer;
-    transition: opacity .2s, transform .1s;
-    white-space: nowrap;
+    background: var(--red); color: #fff; border: none; padding: 8px 18px;
+    border-radius: 6px; font-family: 'DM Sans', sans-serif; font-weight: 600;
+    font-size: 0.82rem; cursor: pointer; transition: opacity .2s, transform .1s; white-space: nowrap;
   }
-  .btn:hover { opacity: 0.85; }
-  .btn:active { transform: scale(0.97); }
-  .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+  .btn:hover { opacity: 0.85; } .btn:active { transform: scale(0.97); } .btn:disabled { opacity: 0.4; cursor: not-allowed; }
 
   /* MAIN */
   main { max-width: 1300px; margin: 0 auto; padding: 36px 40px; }
-
-  .page-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 3.2rem;
-    letter-spacing: 2px;
-    margin-bottom: 6px;
-  }
+  .page-title { font-family: 'Bebas Neue', sans-serif; font-size: 3.2rem; letter-spacing: 2px; margin-bottom: 6px; }
   .page-title span { color: var(--red); }
   .subtitle { color: var(--muted); font-size: 0.92rem; margin-bottom: 30px; }
 
   /* CONTROLS */
-  .controls {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 30px;
-    align-items: center;
-  }
-
+  .controls { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 30px; align-items: center; }
   .controls select, .controls input[type=number] {
-    background: var(--card);
-    border: 1px solid var(--border);
-    color: var(--text);
-    padding: 9px 14px;
-    border-radius: 6px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.88rem;
-    cursor: pointer;
-    transition: border-color .2s;
-    appearance: none;
-    -webkit-appearance: none;
+    background: var(--card); border: 1px solid var(--border); color: var(--text);
+    padding: 9px 14px; border-radius: 6px; font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem; cursor: pointer; transition: border-color .2s;
+    appearance: none; -webkit-appearance: none;
   }
-  .controls select:focus, .controls input[type=number]:focus {
-    outline: none; border-color: var(--red);
-  }
-
-  .select-wrap {
-    position: relative;
-    display: inline-block;
-  }
-  .select-wrap::after {
-    content: '▾';
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--muted);
-    pointer-events: none;
-    font-size: 0.8rem;
-  }
-
+  .controls select:focus, .controls input[type=number]:focus { outline: none; border-color: var(--red); }
+  .select-wrap { position: relative; display: inline-block; }
+  .select-wrap::after { content: '▾'; position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; font-size: 0.8rem; }
   .controls input[type=number] { width: 80px; }
-
-  .search-btn {
-    padding: 9px 28px;
-    font-size: 0.88rem;
-  }
+  .search-btn { padding: 9px 28px; font-size: 0.88rem; }
 
   /* STATUS */
-  #status {
-    font-size: 0.85rem;
-    color: var(--muted);
-    margin-bottom: 20px;
-    min-height: 20px;
-  }
-  #status.error { color: #ff6b6b; }
-  #status.success { color: #6bff9e; }
+  #status { font-size: 0.85rem; color: var(--muted); margin-bottom: 20px; min-height: 20px; }
+  #status.error { color: #ff6b6b; } #status.success { color: #6bff9e; }
 
   /* LOADING */
-  .loader {
-    display: none;
-    text-align: center;
-    padding: 60px;
-  }
+  .loader { display: none; text-align: center; padding: 60px; }
   .loader.active { display: block; }
-  .spinner {
-    width: 40px; height: 40px;
-    border: 3px solid var(--border);
-    border-top-color: var(--red);
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-    margin: 0 auto 16px;
-  }
+  .spinner { width: 40px; height: 40px; border: 3px solid var(--border); border-top-color: var(--red); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 16px; }
   @keyframes spin { to { transform: rotate(360deg); } }
 
   /* GRID */
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
-  }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
 
   /* CARD */
   .card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: border-color .2s, transform .2s;
-    animation: fadeUp .35s ease both;
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    overflow: hidden; transition: border-color .2s, transform .2s;
+    animation: fadeUp .35s ease both; cursor: pointer;
   }
-  .card:hover {
-    border-color: #333;
-    transform: translateY(-3px);
-  }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(16px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  .thumb-wrap {
-    position: relative;
-    aspect-ratio: 16/9;
-    overflow: hidden;
-    background: #1a1a1a;
-  }
-  .thumb-wrap img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    transition: transform .3s;
-  }
+  .card:hover { border-color: #444; transform: translateY(-3px); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .thumb-wrap { position: relative; aspect-ratio: 16/9; overflow: hidden; background: #1a1a1a; }
+  .thumb-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
   .card:hover .thumb-wrap img { transform: scale(1.04); }
-
-  .rank-badge {
-    position: absolute;
-    top: 10px; left: 10px;
-    background: var(--red);
-    color: #fff;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1rem;
-    letter-spacing: 1px;
-    padding: 2px 8px;
-    border-radius: 4px;
-  }
-
-  .duration-badge {
-    position: absolute;
-    bottom: 8px; right: 8px;
-    background: rgba(0,0,0,0.8);
-    color: #fff;
-    font-size: 0.72rem;
-    padding: 2px 6px;
-    border-radius: 3px;
-  }
-
+  .rank-badge { position: absolute; top: 10px; left: 10px; background: var(--red); color: #fff; font-family: 'Bebas Neue', sans-serif; font-size: 1rem; letter-spacing: 1px; padding: 2px 8px; border-radius: 4px; }
+  .duration-badge { position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.8); color: #fff; font-size: 0.72rem; padding: 2px 6px; border-radius: 3px; }
   .card-body { padding: 14px; }
-
-  .card-title {
-    font-size: 0.9rem;
-    font-weight: 500;
-    line-height: 1.4;
-    margin-bottom: 8px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  .channel-name {
-    font-size: 0.78rem;
-    color: var(--muted);
-    margin-bottom: 10px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .stats {
-    display: flex;
-    gap: 14px;
-    font-size: 0.75rem;
-    color: #888;
-    flex-wrap: wrap;
-  }
+  .card-title { font-size: 0.9rem; font-weight: 500; line-height: 1.4; margin-bottom: 8px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .channel-name { font-size: 0.78rem; color: var(--muted); margin-bottom: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .stats { display: flex; gap: 14px; font-size: 0.75rem; color: #888; flex-wrap: wrap; }
   .stat { display: flex; align-items: center; gap: 4px; }
-  .stat svg { flex-shrink: 0; }
-
-  .card-footer {
-    padding: 10px 14px;
-    border-top: 1px solid var(--border);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .category-tag {
-    font-size: 0.7rem;
-    background: rgba(255,0,51,0.1);
-    color: var(--red);
-    border: 1px solid rgba(255,0,51,0.2);
-    padding: 2px 8px;
-    border-radius: 20px;
-  }
-
-  .watch-btn {
-    font-size: 0.72rem;
-    padding: 4px 12px;
-    background: transparent;
-    border: 1px solid var(--border);
-    color: var(--text);
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all .2s;
-    text-decoration: none;
-    font-family: 'DM Sans', sans-serif;
-  }
+  .card-footer { padding: 10px 14px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .category-tag { font-size: 0.7rem; background: rgba(255,0,51,0.1); color: var(--red); border: 1px solid rgba(255,0,51,0.2); padding: 2px 8px; border-radius: 20px; }
+  .watch-btn { font-size: 0.72rem; padding: 4px 12px; background: transparent; border: 1px solid var(--border); color: var(--text); border-radius: 4px; cursor: pointer; transition: all .2s; text-decoration: none; font-family: 'DM Sans', sans-serif; }
   .watch-btn:hover { border-color: var(--red); color: var(--red); }
-
-  .copy-btn {
-    font-size: 0.72rem;
-    padding: 4px 12px;
-    background: transparent;
-    border: 1px solid var(--border);
-    color: var(--muted);
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all .2s;
-    font-family: 'DM Sans', sans-serif;
-  }
+  .copy-btn { font-size: 0.72rem; padding: 4px 12px; background: transparent; border: 1px solid var(--border); color: var(--muted); border-radius: 4px; cursor: pointer; transition: all .2s; font-family: 'DM Sans', sans-serif; }
   .copy-btn:hover { border-color: #555; color: var(--text); }
   .copy-btn.copied { border-color: #6bff9e; color: #6bff9e; }
 
-  .card-footer { gap: 6px; flex-wrap: wrap; }
-
   /* EMPTY */
-  .empty {
-    text-align: center;
-    padding: 80px 20px;
-    color: var(--muted);
-  }
+  .empty { text-align: center; padding: 80px 20px; color: var(--muted); }
   .empty .big { font-family: 'Bebas Neue'; font-size: 4rem; color: #1a1a1a; }
 
   /* FOOTER */
-  footer {
-    text-align: center;
-    padding: 30px;
-    color: var(--muted);
-    font-size: 0.78rem;
-    border-top: 1px solid var(--border);
-    margin-top: 60px;
+  footer { text-align: center; padding: 30px; color: var(--muted); font-size: 0.78rem; border-top: 1px solid var(--border); margin-top: 60px; }
+
+  /* ===== MODAL ===== */
+  .modal-overlay {
+    display: none; position: fixed; inset: 0;
+    background: rgba(0,0,0,0.85); backdrop-filter: blur(6px);
+    z-index: 999; align-items: center; justify-content: center; padding: 16px;
   }
+  .modal-overlay.active { display: flex; }
+
+  .modal {
+    background: #141414; border: 1px solid #2a2a2a; border-radius: 14px;
+    width: 100%; max-width: 720px; max-height: 90vh;
+    overflow-y: auto; animation: modalIn .25s ease;
+    scrollbar-width: thin; scrollbar-color: #333 transparent;
+  }
+  @keyframes modalIn { from { opacity: 0; transform: scale(0.95) translateY(20px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+
+  .modal-header { position: relative; }
+  .modal-thumb { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 14px 14px 0 0; display: block; }
+  .modal-close {
+    position: absolute; top: 12px; right: 12px;
+    background: rgba(0,0,0,0.7); border: none; color: #fff;
+    width: 34px; height: 34px; border-radius: 50%; font-size: 1.1rem;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    transition: background .2s;
+  }
+  .modal-close:hover { background: var(--red); }
+
+  .modal-body { padding: 20px 24px; }
+
+  .modal-title { font-size: 1.1rem; font-weight: 600; line-height: 1.4; margin-bottom: 6px; }
+  .modal-channel { font-size: 0.85rem; color: var(--muted); margin-bottom: 16px; }
+
+  /* STATS ROW */
+  .modal-stats {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px; margin-bottom: 20px;
+  }
+  .mstat {
+    background: #1a1a1a; border: 1px solid var(--border);
+    border-radius: 8px; padding: 12px; text-align: center;
+  }
+  .mstat-icon { font-size: 1.3rem; margin-bottom: 4px; }
+  .mstat-val { font-size: 1rem; font-weight: 600; color: var(--text); }
+  .mstat-label { font-size: 0.68rem; color: var(--muted); margin-top: 2px; }
+
+  /* EARNINGS */
+  .earnings-box {
+    background: linear-gradient(135deg, #1a0a00, #200000);
+    border: 1px solid rgba(255,0,51,0.25); border-radius: 10px;
+    padding: 16px; margin-bottom: 20px;
+  }
+  .earnings-title { font-size: 0.75rem; color: var(--muted); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+  .earnings-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+  .earnings-item { text-align: center; }
+  .earnings-val { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; color: var(--red); letter-spacing: 1px; }
+  .earnings-sub { font-size: 0.68rem; color: var(--muted); }
+  .earnings-note { font-size: 0.68rem; color: #444; margin-top: 8px; }
+
+  /* TABS */
+  .tabs { display: flex; gap: 4px; margin-bottom: 14px; border-bottom: 1px solid var(--border); padding-bottom: 0; }
+  .tab-btn {
+    background: none; border: none; color: var(--muted); font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem; padding: 8px 14px; cursor: pointer; border-bottom: 2px solid transparent;
+    transition: all .2s; margin-bottom: -1px;
+  }
+  .tab-btn:hover { color: var(--text); }
+  .tab-btn.active { color: var(--red); border-bottom-color: var(--red); }
+
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  .desc-box {
+    background: #1a1a1a; border-radius: 8px; padding: 14px;
+    font-size: 0.82rem; line-height: 1.7; color: #bbb;
+    white-space: pre-wrap; word-break: break-word;
+    max-height: 220px; overflow-y: auto;
+    scrollbar-width: thin; scrollbar-color: #333 transparent;
+  }
+
+  .hashtags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .hashtag {
+    background: rgba(255,0,51,0.08); border: 1px solid rgba(255,0,51,0.2);
+    color: var(--red); font-size: 0.78rem; padding: 4px 12px; border-radius: 20px;
+    cursor: pointer; transition: background .2s;
+  }
+  .hashtag:hover { background: rgba(255,0,51,0.18); }
+
+  .transcript-box { text-align: center; padding: 24px; }
+  .transcript-box p { color: var(--muted); font-size: 0.85rem; margin-bottom: 14px; line-height: 1.6; }
+
+  /* MODAL FOOTER */
+  .modal-footer {
+    padding: 14px 24px 20px; display: flex; gap: 8px; flex-wrap: wrap;
+    border-top: 1px solid var(--border);
+  }
+
+  /* LIKE RATIO BAR */
+  .ratio-bar { background: #1a1a1a; border-radius: 4px; height: 6px; overflow: hidden; margin-top: 6px; }
+  .ratio-fill { height: 100%; background: linear-gradient(90deg, #6bff9e, var(--red)); border-radius: 4px; transition: width .6s ease; }
 
   @media (max-width: 700px) {
     header { padding: 14px 16px; flex-wrap: wrap; gap: 10px; }
     .api-bar input { width: 180px; }
     main { padding: 24px 16px; }
     .page-title { font-size: 2.2rem; }
+    .modal-body { padding: 16px; }
+    .modal-footer { padding: 12px 16px 16px; }
   }
 </style>
 </head>
@@ -402,7 +282,6 @@
         <option value="NP">🇳🇵 Nepal</option>
       </select>
     </div>
-
     <div class="select-wrap">
       <select id="categorySelect">
         <option value="0">📋 Semua Kategori</option>
@@ -423,12 +302,8 @@
         <option value="43">🔵 Show</option>
       </select>
     </div>
-
     <input type="number" id="maxResults" value="20" min="5" max="50" title="Jumlah video" />
-
-    <button class="btn search-btn" id="searchBtn" onclick="fetchTrending()">
-      🔍 Cari Trending
-    </button>
+    <button class="btn search-btn" id="searchBtn" onclick="fetchTrending()">🔍 Cari Trending</button>
   </div>
 
   <div id="status"></div>
@@ -436,18 +311,58 @@
     <div class="spinner"></div>
     <div style="color:var(--muted);font-size:.88rem">Mengambil data trending...</div>
   </div>
-
   <div class="grid" id="grid"></div>
-
   <div class="empty" id="emptyState">
     <div class="big">YT</div>
     <p>Masukkan API Key lalu klik <strong>Cari Trending</strong></p>
   </div>
 </main>
 
-<footer>
-  SniperYT — Powered by YouTube Data API v3
-</footer>
+<footer>SniperYT — Powered by YouTube Data API v3</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <img class="modal-thumb" id="mThumb" src="" alt="" />
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-title" id="mTitle"></div>
+      <div class="modal-channel" id="mChannel"></div>
+
+      <!-- STATS -->
+      <div class="modal-stats" id="mStats"></div>
+
+      <!-- EARNINGS -->
+      <div class="earnings-box">
+        <div class="earnings-title">💰 Estimasi Penghasilan</div>
+        <div class="earnings-row" id="mEarnings"></div>
+        <div class="earnings-note">⚠️ Estimasi berdasarkan rata-rata CPM. Bukan data resmi YouTube.</div>
+      </div>
+
+      <!-- TABS -->
+      <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('desc',this)">📝 Deskripsi</button>
+        <button class="tab-btn" onclick="switchTab('tags',this)">#️⃣ Hashtag & Tags</button>
+        <button class="tab-btn" onclick="switchTab('transcript',this)">📄 Transkrip</button>
+      </div>
+      <div class="tab-content active" id="tab-desc">
+        <div class="desc-box" id="mDesc">—</div>
+      </div>
+      <div class="tab-content" id="tab-tags">
+        <div class="hashtags" id="mTags"></div>
+      </div>
+      <div class="tab-content" id="tab-transcript">
+        <div class="transcript-box">
+          <p>Transkrip tidak bisa diambil langsung via API.<br>Klik tombol di bawah untuk membuka halaman transkrip di YouTube.</p>
+          <a id="mTranscriptLink" href="#" target="_blank" rel="noopener" class="btn" style="display:inline-block;text-decoration:none">📄 Buka Transkrip di YouTube</a>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer" id="mFooter"></div>
+  </div>
+</div>
 
 <script>
 const CATEGORIES = {
@@ -468,17 +383,33 @@ function saveKey() {
 
 function setStatus(msg, type='') {
   const el = document.getElementById('status');
-  el.textContent = msg;
-  el.className = type;
+  el.textContent = msg; el.className = type;
 }
 
 function formatNum(n) {
   if (!n) return '–';
   n = parseInt(n);
-  if (n >= 1e9) return (n/1e9).toFixed(1)+'M jt';
-  if (n >= 1e6) return (n/1e6).toFixed(1)+' jt';
-  if (n >= 1e3) return (n/1e3).toFixed(1)+'rb';
+  if (n >= 1e9) return (n/1e9).toFixed(2)+' M';
+  if (n >= 1e6) return (n/1e6).toFixed(2)+' jt';
+  if (n >= 1e3) return (n/1e3).toFixed(1)+' rb';
   return n.toString();
+}
+
+function formatRupiah(usd) {
+  const idr = usd * 16000;
+  if (idr >= 1e9) return 'Rp '+(idr/1e9).toFixed(1)+'M';
+  if (idr >= 1e6) return 'Rp '+(idr/1e6).toFixed(1)+' jt';
+  return 'Rp '+(idr/1e3).toFixed(0)+' rb';
+}
+
+function estimateEarnings(views) {
+  const v = parseInt(views) || 0;
+  const cpmLow = 0.5, cpmMid = 2.5, cpmHigh = 6.0;
+  return {
+    low:  (v / 1000 * cpmLow).toFixed(0),
+    mid:  (v / 1000 * cpmMid).toFixed(0),
+    high: (v / 1000 * cpmHigh).toFixed(0)
+  };
 }
 
 function parseDuration(iso) {
@@ -498,10 +429,25 @@ function timeAgo(dateStr) {
   return Math.floor(diff/2592000)+' bulan lalu';
 }
 
+function escHtml(str) {
+  return (str||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function copyText(text, btn) {
+  navigator.clipboard.writeText(text).then(() => {
+    const orig = btn.innerHTML; btn.innerHTML = '✅ Copied!'; btn.classList.add('copied');
+    setTimeout(() => { btn.innerHTML = orig; btn.classList.remove('copied'); }, 1800);
+  }).catch(() => {
+    const ta = document.createElement('textarea');
+    ta.value = text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+    const orig = btn.innerHTML; btn.innerHTML = '✅ Copied!'; btn.classList.add('copied');
+    setTimeout(() => { btn.innerHTML = orig; btn.classList.remove('copied'); }, 1800);
+  });
+}
+
 async function fetchTrending() {
   apiKey = document.getElementById('apiKey').value.trim();
   if (!apiKey) { setStatus('❌ Masukkan API Key terlebih dahulu!', 'error'); return; }
-
   const region = document.getElementById('regionSelect').value;
   const category = document.getElementById('categorySelect').value;
   const maxResults = Math.min(50, Math.max(1, parseInt(document.getElementById('maxResults').value)||20));
@@ -513,21 +459,15 @@ async function fetchTrending() {
   setStatus('');
 
   try {
-    // Step 1: get trending IDs + snippet
     let url = `https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=${region}&maxResults=${maxResults}&key=${apiKey}`;
     if (category !== '0') url += `&videoCategoryId=${category}`;
-
     const res = await fetch(url);
     const data = await res.json();
-
     if (data.error) throw new Error(data.error.message);
-
     const items = data.items || [];
     if (!items.length) { setStatus('Tidak ada video trending ditemukan.', 'error'); return; }
-
     const regionName = document.getElementById('regionSelect').selectedOptions[0].text;
     setStatus(`✅ ${items.length} video trending di ${regionName}`, 'success');
-
     renderCards(items);
   } catch (e) {
     setStatus('❌ Error: ' + e.message, 'error');
@@ -538,14 +478,15 @@ async function fetchTrending() {
   }
 }
 
+// Store items globally for modal access
+let allItems = [];
+
 function renderCards(items) {
+  allItems = items;
   const grid = document.getElementById('grid');
   grid.innerHTML = '';
-
   items.forEach((item, i) => {
-    const s = item.snippet;
-    const st = item.statistics;
-    const cd = item.contentDetails;
+    const s = item.snippet, st = item.statistics, cd = item.contentDetails;
     const videoId = item.id;
     const thumb = s.thumbnails?.maxres?.url || s.thumbnails?.high?.url || s.thumbnails?.medium?.url || '';
     const catLabel = CATEGORIES[s.categoryId] || 'Lainnya';
@@ -555,12 +496,15 @@ function renderCards(items) {
     card.className = 'card';
     card.style.animationDelay = (i * 0.04) + 's';
     card.innerHTML = `
-      <div class="thumb-wrap">
+      <div class="thumb-wrap" onclick="openModal(${i})">
         <img src="${thumb}" alt="${escHtml(s.title)}" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22320%22 height=%22180%22><rect fill=%22%231a1a1a%22 width=%22320%22 height=%22180%22/><text fill=%22%23444%22 font-size=%2240%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22 x=%22160%22 y=%2290%22>▶</text></svg>'" />
         <div class="rank-badge">#${i+1}</div>
         ${dur ? `<div class="duration-badge">${dur}</div>` : ''}
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s;background:rgba(0,0,0,0.4)" class="play-overlay">
+          <div style="background:var(--red);border-radius:50%;width:48px;height:48px;display:flex;align-items:center;justify-content:center;font-size:1.2rem">▶</div>
+        </div>
       </div>
-      <div class="card-body">
+      <div class="card-body" onclick="openModal(${i})" style="cursor:pointer">
         <div class="card-title">${escHtml(s.title)}</div>
         <div class="channel-name">📺 ${escHtml(s.channelTitle)}</div>
         <div class="stats">
@@ -582,40 +526,144 @@ function renderCards(items) {
       <div class="card-footer">
         <span class="category-tag">${catLabel}</span>
         <div style="display:flex;gap:6px">
-          <button class="copy-btn" onclick="copyText('https://youtube.com/watch?v=${videoId}', this)" title="Copy link">🔗 Link</button>
-          <button class="copy-btn" onclick="copyText('${escHtml(s.title).replace(/'/g,"\\'")}', this)" title="Copy judul">📋 Judul</button>
-          <a class="watch-btn" href="https://youtube.com/watch?v=${videoId}" target="_blank" rel="noopener">▶ Tonton</a>
+          <button class="copy-btn" onclick="event.stopPropagation();copyText('https://youtube.com/watch?v=${videoId}', this)">🔗 Link</button>
+          <button class="copy-btn" onclick="event.stopPropagation();copyText(${JSON.stringify(s.title)}, this)">📋 Judul</button>
+          <a class="watch-btn" href="https://youtube.com/watch?v=${videoId}" target="_blank" rel="noopener" onclick="event.stopPropagation()">▶ Tonton</a>
         </div>
       </div>
     `;
+
+    // hover play overlay
+    const overlay = card.querySelector('.play-overlay');
+    const thumbWrap = card.querySelector('.thumb-wrap');
+    thumbWrap.addEventListener('mouseenter', () => overlay.style.opacity = '1');
+    thumbWrap.addEventListener('mouseleave', () => overlay.style.opacity = '0');
+
     grid.appendChild(card);
   });
 }
 
-function escHtml(str) {
-  return (str||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+async function openModal(index) {
+  const item = allItems[index];
+  if (!item) return;
+  const s = item.snippet, st = item.statistics, cd = item.contentDetails;
+  const videoId = item.id;
+  const thumb = s.thumbnails?.maxres?.url || s.thumbnails?.high?.url || s.thumbnails?.medium?.url || '';
+
+  // Basic info
+  document.getElementById('mThumb').src = thumb;
+  document.getElementById('mTitle').textContent = s.title;
+  document.getElementById('mChannel').textContent = '📺 ' + s.channelTitle + '  •  🕒 ' + timeAgo(s.publishedAt);
+
+  // Stats
+  const views = parseInt(st?.viewCount||0);
+  const likes = parseInt(st?.likeCount||0);
+  const comments = parseInt(st?.commentCount||0);
+  const dur = parseDuration(cd?.duration);
+  const likeRatio = views > 0 ? Math.round((likes/views)*100*100)/100 : 0;
+
+  document.getElementById('mStats').innerHTML = `
+    <div class="mstat"><div class="mstat-icon">👁️</div><div class="mstat-val">${formatNum(views)}</div><div class="mstat-label">Views</div></div>
+    <div class="mstat"><div class="mstat-icon">👍</div><div class="mstat-val">${formatNum(likes)}</div><div class="mstat-label">Likes</div></div>
+    <div class="mstat"><div class="mstat-icon">💬</div><div class="mstat-val">${formatNum(comments)}</div><div class="mstat-label">Komentar</div></div>
+    <div class="mstat"><div class="mstat-icon">⏱️</div><div class="mstat-val">${dur||'–'}</div><div class="mstat-label">Durasi</div></div>
+    <div class="mstat" style="grid-column:span 2">
+      <div class="mstat-icon">❤️</div>
+      <div class="mstat-val">${likeRatio}%</div>
+      <div class="mstat-label">Like Ratio</div>
+      <div class="ratio-bar"><div class="ratio-fill" style="width:${Math.min(likeRatio*10,100)}%"></div></div>
+    </div>
+  `;
+
+  // Fetch channel subscribers
+  fetchChannelSubs(s.channelId);
+
+  // Earnings
+  const earn = estimateEarnings(views);
+  document.getElementById('mEarnings').innerHTML = `
+    <div class="earnings-item">
+      <div class="earnings-val">$${parseInt(earn.low).toLocaleString()}</div>
+      <div class="earnings-sub">${formatRupiah(earn.low)}</div>
+      <div class="earnings-sub" style="color:#888">CPM Rendah</div>
+    </div>
+    <div class="earnings-item">
+      <div class="earnings-val" style="color:#ffaa00">$${parseInt(earn.mid).toLocaleString()}</div>
+      <div class="earnings-sub">${formatRupiah(earn.mid)}</div>
+      <div class="earnings-sub" style="color:#888">CPM Rata-rata</div>
+    </div>
+    <div class="earnings-item">
+      <div class="earnings-val" style="color:#6bff9e">$${parseInt(earn.high).toLocaleString()}</div>
+      <div class="earnings-sub">${formatRupiah(earn.high)}</div>
+      <div class="earnings-sub" style="color:#888">CPM Tinggi</div>
+    </div>
+  `;
+
+  // Description
+  const desc = s.description || '(Tidak ada deskripsi)';
+  document.getElementById('mDesc').textContent = desc;
+
+  // Hashtags & Tags
+  const hashtagsInDesc = (desc.match(/#\w+/g) || []);
+  const tags = s.tags || [];
+  const allTags = [...new Set([...hashtagsInDesc, ...tags.map(t => '#'+t)])].slice(0, 40);
+  document.getElementById('mTags').innerHTML = allTags.length
+    ? allTags.map(t => `<span class="hashtag" onclick="copyText('${t}', this)">${escHtml(t)}</span>`).join('')
+    : '<span style="color:var(--muted);font-size:.85rem">Tidak ada hashtag/tag tersedia</span>';
+
+  // Transcript link
+  document.getElementById('mTranscriptLink').href = `https://www.youtube.com/watch?v=${videoId}`;
+
+  // Footer buttons
+  document.getElementById('mFooter').innerHTML = `
+    <button class="copy-btn" onclick="copyText('https://youtube.com/watch?v=${videoId}', this)">🔗 Copy Link</button>
+    <button class="copy-btn" onclick="copyText(${JSON.stringify(s.title)}, this)">📋 Copy Judul</button>
+    <button class="copy-btn" onclick="copyText(${JSON.stringify(s.description||'')}, this)">📝 Copy Deskripsi</button>
+    <a class="btn" href="https://youtube.com/watch?v=${videoId}" target="_blank" rel="noopener" style="text-decoration:none;font-size:.82rem">▶ Tonton</a>
+  `;
+
+  // Reset tabs
+  switchTab('desc', document.querySelector('.tab-btn'));
+
+  document.getElementById('modalOverlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
 }
 
-function copyText(text, btn) {
-  navigator.clipboard.writeText(text).then(() => {
-    const orig = btn.innerHTML;
-    btn.innerHTML = '✅ Copied!';
-    btn.classList.add('copied');
-    setTimeout(() => { btn.innerHTML = orig; btn.classList.remove('copied'); }, 1800);
-  }).catch(() => {
-    // fallback
-    const ta = document.createElement('textarea');
-    ta.value = text;
-    document.body.appendChild(ta);
-    ta.select();
-    document.execCommand('copy');
-    document.body.removeChild(ta);
-    const orig = btn.innerHTML;
-    btn.innerHTML = '✅ Copied!';
-    btn.classList.add('copied');
-    setTimeout(() => { btn.innerHTML = orig; btn.classList.remove('copied'); }, 1800);
+async function fetchChannelSubs(channelId) {
+  if (!channelId || !apiKey) return;
+  try {
+    const res = await fetch(`https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${channelId}&key=${apiKey}`);
+    const data = await res.json();
+    const subs = data.items?.[0]?.statistics?.subscriberCount;
+    if (subs) {
+      const statsEl = document.getElementById('mStats');
+      const subCard = document.createElement('div');
+      subCard.className = 'mstat';
+      subCard.innerHTML = `<div class="mstat-icon">👥</div><div class="mstat-val">${formatNum(subs)}</div><div class="mstat-label">Subscribers</div>`;
+      statsEl.insertBefore(subCard, statsEl.children[3]);
+    }
+  } catch(e) {}
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function closeModalOutside(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeModal();
+}
+
+function switchTab(name, btn) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  document.querySelectorAll('.tab-btn').forEach(b => {
+    if (b.getAttribute('onclick').includes("'"+name+"'")) b.classList.add('active');
   });
 }
+
+// Close modal with ESC
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 </script>
 </body>
 </html>
