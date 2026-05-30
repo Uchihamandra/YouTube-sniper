@@ -294,6 +294,22 @@
   }
   .watch-btn:hover { border-color: var(--red); color: var(--red); }
 
+  .copy-btn {
+    font-size: 0.72rem;
+    padding: 4px 12px;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all .2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .copy-btn:hover { border-color: #555; color: var(--text); }
+  .copy-btn.copied { border-color: #6bff9e; color: #6bff9e; }
+
+  .card-footer { gap: 6px; flex-wrap: wrap; }
+
   /* EMPTY */
   .empty {
     text-align: center;
@@ -565,7 +581,11 @@ function renderCards(items) {
       </div>
       <div class="card-footer">
         <span class="category-tag">${catLabel}</span>
-        <a class="watch-btn" href="https://youtube.com/watch?v=${videoId}" target="_blank" rel="noopener">▶ Tonton</a>
+        <div style="display:flex;gap:6px">
+          <button class="copy-btn" onclick="copyText('https://youtube.com/watch?v=${videoId}', this)" title="Copy link">🔗 Link</button>
+          <button class="copy-btn" onclick="copyText('${escHtml(s.title).replace(/'/g,"\\'")}', this)" title="Copy judul">📋 Judul</button>
+          <a class="watch-btn" href="https://youtube.com/watch?v=${videoId}" target="_blank" rel="noopener">▶ Tonton</a>
+        </div>
       </div>
     `;
     grid.appendChild(card);
@@ -574,6 +594,27 @@ function renderCards(items) {
 
 function escHtml(str) {
   return (str||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function copyText(text, btn) {
+  navigator.clipboard.writeText(text).then(() => {
+    const orig = btn.innerHTML;
+    btn.innerHTML = '✅ Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.innerHTML = orig; btn.classList.remove('copied'); }, 1800);
+  }).catch(() => {
+    // fallback
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    const orig = btn.innerHTML;
+    btn.innerHTML = '✅ Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.innerHTML = orig; btn.classList.remove('copied'); }, 1800);
+  });
 }
 </script>
 </body>
